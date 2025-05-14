@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/plag-checker-app/static/css/main.08658505.css",
-    "main.js": "/plag-checker-app/static/js/main.2c4de11b.js",
-    "static/js/239.4cd860a8.chunk.js": "/plag-checker-app/static/js/239.4cd860a8.chunk.js",
-    "static/js/977.e1bd0786.chunk.js": "/plag-checker-app/static/js/977.e1bd0786.chunk.js",
-    "static/js/732.f2fa3afe.chunk.js": "/plag-checker-app/static/js/732.f2fa3afe.chunk.js",
-    "static/js/453.419a5d54.chunk.js": "/plag-checker-app/static/js/453.419a5d54.chunk.js",
+    "main.css": "/plag-checker-app/static/css/main.7674db42.css",
+    "main.js": "/plag-checker-app/static/js/main.c963eb16.js",
+    "static/js/239.eab0352a.chunk.js": "/plag-checker-app/static/js/239.eab0352a.chunk.js",
+    "static/js/977.a5c2f382.chunk.js": "/plag-checker-app/static/js/977.a5c2f382.chunk.js",
+    "static/js/455.82e7fc1a.chunk.js": "/plag-checker-app/static/js/455.82e7fc1a.chunk.js",
+    "static/js/453.258b012d.chunk.js": "/plag-checker-app/static/js/453.258b012d.chunk.js",
     "static/media/poppins-devanagari-400-normal.woff": "/plag-checker-app/static/media/poppins-devanagari-400-normal.421fe9869ff4b58e2d7b.woff",
     "static/media/inter-latin-ext-400-normal.woff": "/plag-checker-app/static/media/inter-latin-ext-400-normal.1c20f7dc20d731a18fcd.woff",
     "static/media/poppins-devanagari-400-normal.woff2": "/plag-checker-app/static/media/poppins-devanagari-400-normal.d2ee5e6ea17bffe3bf58.woff2",
@@ -27,15 +27,15 @@
     "static/media/inter-greek-ext-400-normal.woff2": "/plag-checker-app/static/media/inter-greek-ext-400-normal.f2fa0d9ef98f59d4a75b.woff2",
     "static/media/inter-vietnamese-400-normal.woff2": "/plag-checker-app/static/media/inter-vietnamese-400-normal.44c9df135eec470b0ab6.woff2",
     "index.html": "/plag-checker-app/index.html",
-    "main.08658505.css.map": "/plag-checker-app/static/css/main.08658505.css.map",
-    "main.2c4de11b.js.map": "/plag-checker-app/static/js/main.2c4de11b.js.map",
-    "239.4cd860a8.chunk.js.map": "/plag-checker-app/static/js/239.4cd860a8.chunk.js.map",
-    "977.e1bd0786.chunk.js.map": "/plag-checker-app/static/js/977.e1bd0786.chunk.js.map",
-    "732.f2fa3afe.chunk.js.map": "/plag-checker-app/static/js/732.f2fa3afe.chunk.js.map",
-    "453.419a5d54.chunk.js.map": "/plag-checker-app/static/js/453.419a5d54.chunk.js.map"
+    "main.7674db42.css.map": "/plag-checker-app/static/css/main.7674db42.css.map",
+    "main.c963eb16.js.map": "/plag-checker-app/static/js/main.c963eb16.js.map",
+    "239.eab0352a.chunk.js.map": "/plag-checker-app/static/js/239.eab0352a.chunk.js.map",
+    "977.a5c2f382.chunk.js.map": "/plag-checker-app/static/js/977.a5c2f382.chunk.js.map",
+    "455.82e7fc1a.chunk.js.map": "/plag-checker-app/static/js/455.82e7fc1a.chunk.js.map",
+    "453.258b012d.chunk.js.map": "/plag-checker-app/static/js/453.258b012d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.08658505.css",
-    "static/js/main.2c4de11b.js"
+    "static/css/main.7674db42.css",
+    "static/js/main.c963eb16.js"
   ]
 }
