@@ -26,20 +26,20 @@ jobs:
 
     - name: Install Dependencies for Server
       run: npm install
-      working-directory: ./PLAG_CHECKER_APP/server  # Updated to correct folder name
+      working-directory: ./plag-checker-app/PLAG_CHECKER_APP/server  # Fixed path
 
     - name: Install Dependencies for Client
       run: npm install
-      working-directory: ./PLAG_CHECKER_APP/client  # Updated to correct folder name
+      working-directory: ./plag-checker-app/PLAG_CHECKER_APP/client  # Fixed path
 
     - name: Build React App
       run: npm run build
-      working-directory: ./PLAG_CHECKER_APP/client  # Updated to correct folder name
+      working-directory: ./plag-checker-app/PLAG_CHECKER_APP/client  # Fixed path
 
     - name: Upload Built Files
       uses: actions/upload-pages-artifact@v3
       with:
-        path: './PLAG_CHECKER_APP/client/build'  # Ensuring correct build folder
+        path: './plag-checker-app/PLAG_CHECKER_APP/client/build'  # Fixed path
 
     - name: Deploy to GitHub Pages
       id: deployment
