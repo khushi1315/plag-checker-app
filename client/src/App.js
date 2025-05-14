@@ -346,7 +346,7 @@ function App() {
   return (
     <>
       <Navbar />
-      
+      <Landing/>
       <Routes>
         <Route path="/" element={Landing} />
         <Route path="/check" element={mainChecker} />

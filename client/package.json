@@ -1,7 +1,5 @@
 {
   "homepage": "https://khushi1315.github.io/plag-checker-app",
-
-
   "name": "client",
   "version": "0.1.0",
   "private": true,
@@ -55,5 +53,8 @@
   "overrides": {
     "nth-check": "2.1.1",
     "postcss": "8.5.3"
+  },
+  "devDependencies": {
+    "eslint-plugin-react": "^7.37.5"
   }
 }
