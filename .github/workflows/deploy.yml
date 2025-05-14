@@ -3,7 +3,7 @@ name: Deploy React App to GitHub Pages
 on:
   push:
     branches:
-      - master  # or 'master' if that's your default branch
+      - master  # or 'main' if that's your default branch
 
 permissions:
   contents: write  # Required for deploying to gh-pages branch
@@ -15,6 +15,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          submodules: false  # Explicitly disable submodule fetching
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
