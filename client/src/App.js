@@ -4,11 +4,17 @@ import './App.css';
 import { saveAs } from 'file-saver';
 import { jsPDF } from 'jspdf';
 import { Routes, Route, NavLink, useNavigate } from "react-router-dom";
-import * as pdfjsLib from 'pdfjs-dist/build/pdf';
-import { motion } from 'framer-motion';
-import { FaFilePdf, FaFileAlt, FaTimes } from 'react-icons/fa';
 
-pdfjsLib.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs';
+import { motion } from 'framer-motion';
+import { FaFilePdf, FaFileAlt} from 'react-icons/fa';
+import Landing from './components/Landing';
+import * as pdfjsLib from 'pdfjs-dist/legacy/build/pdf';
+
+// Set correct path for worker (especially if app is hosted in a subfolder)
+pdfjsLib.GlobalWorkerOptions.workerSrc = `${process.env.PUBLIC_URL}/pdf.worker.js`;
+
+
+
 
 function App() {
   const [text, setText] = useState('');
@@ -282,50 +288,7 @@ function App() {
     </nav>
   );
 
-  // Landing page (unchanged, or you can simplify/remove as needed)
-  const Landing = (
-    <div className="landing-split dark-bg">
-      <div className="landing-card dark-card">
-        <h1 className="landing-title">
-          <FaFileAlt style={{ color: "#4f8cff", marginRight: 14 }} />
-          Why Plagiarism Matters
-        </h1>
-        <div className="gold-bar">Why this matters</div>
-        <div className="why-text">
-          Plagiarism can harm your academic and professional reputation.<br />
-          Checking your work helps you stand out and build trust!
-        </div>
-        <div className="how-works-title">How it works</div>
-        <ol className="how-works-list">
-          <li>Click the <b>Check Plagiarism</b> button in the navbar.</li>
-          <li>Upload your PDF or paste your text.</li>
-          <li>Click <b>Check with AI</b> to scan for plagiarism.</li>
-          <li>View your results and download the report.</li>
-        </ol>
-        <button
-          className="big-check-btn"
-          onClick={() => {
-            setResult(null);
-            setText('');
-            setPdfName('');
-            navigate("/check");
-          }}
-        >
-          Check Plagiarism Now
-        </button>
-        <div className="footer-warning dark-footer">
-          Built with <span role="img" aria-label="heart">❤️</span> by Khushi | AI-powered
-        </div>
-      </div>
-      <div className="landing-image-col">
-        <img
-          src="/plag-landing.png"
-          alt="Plagiarism illustration"
-          className="landing-image"
-        />
-      </div>
-    </div>
-  );
+ 
   function About() {
     return (
       <div className="about-page">
@@ -348,7 +311,7 @@ function App() {
       <Navbar />
       
       <Routes>
-        <Route path="/" element={Landing} />
+          <Route path="/" element={<Landing />} />
         <Route path="/check" element={mainChecker} />
         <Route path="/about" element={<About />} />
       </Routes>
