@@ -95,7 +95,7 @@ function App() {
     if (!text.trim()) return;
     setLoading(true);
     try {
-      const res = await axios.post('https://plag-checker-app.onrender.com', { text });
+      const res = await axios.post('https://plag-checker-app.onrender.com/api/check', { text });
       setResult(res.data);
     } catch (err) {
       alert("Something went wrong.");
