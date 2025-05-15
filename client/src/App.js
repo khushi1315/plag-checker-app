@@ -95,7 +95,7 @@ function App() {
     if (!text.trim()) return;
     setLoading(true);
     try {
-      const res = await axios.post('http://localhost:5000/api/check', { text });
+      const res = await axios.post('https://plag-checker-app.onrender.com', { text });
       setResult(res.data);
     } catch (err) {
       alert("Something went wrong.");
