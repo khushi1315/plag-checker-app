@@ -7,18 +7,21 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
+// Root Route to prevent "Cannot GET /" error
+app.get("/", (req, res) => {
+    res.send("Server is running!");
+});
+
+// Plagiarism Check API
 app.post('/api/check', (req, res) => {
     const { text } = req.body;
 
-    // Fake logic: if text includes "copy", flag as 60% plagiarized
     let percentage = text.includes("copy") ? 60 : 5;
     let message = percentage > 50 ? "High plagiarism detected!" : "Looks good. Minimal plagiarism.";
 
     res.json({ percentage, message });
 });
 
+// Use Render-assigned port
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-
-
-
