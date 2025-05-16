@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/plag-checker-app/static/css/main.c9d02557.css",
-    "main.js": "/plag-checker-app/static/js/main.e571f295.js",
+    "main.js": "/plag-checker-app/static/js/main.7564f7a1.js",
     "static/js/239.eab0352a.chunk.js": "/plag-checker-app/static/js/239.eab0352a.chunk.js",
     "static/js/977.a5c2f382.chunk.js": "/plag-checker-app/static/js/977.a5c2f382.chunk.js",
     "static/js/455.82e7fc1a.chunk.js": "/plag-checker-app/static/js/455.82e7fc1a.chunk.js",
@@ -28,7 +28,7 @@
     "static/media/inter-vietnamese-400-normal.woff2": "/plag-checker-app/static/media/inter-vietnamese-400-normal.44c9df135eec470b0ab6.woff2",
     "index.html": "/plag-checker-app/index.html",
     "main.c9d02557.css.map": "/plag-checker-app/static/css/main.c9d02557.css.map",
-    "main.e571f295.js.map": "/plag-checker-app/static/js/main.e571f295.js.map",
+    "main.7564f7a1.js.map": "/plag-checker-app/static/js/main.7564f7a1.js.map",
     "239.eab0352a.chunk.js.map": "/plag-checker-app/static/js/239.eab0352a.chunk.js.map",
     "977.a5c2f382.chunk.js.map": "/plag-checker-app/static/js/977.a5c2f382.chunk.js.map",
     "455.82e7fc1a.chunk.js.map": "/plag-checker-app/static/js/455.82e7fc1a.chunk.js.map",
@@ -36,6 +36,6 @@
   },
   "entrypoints": [
     "static/css/main.c9d02557.css",
-    "static/js/main.e571f295.js"
+    "static/js/main.7564f7a1.js"
   ]
 }
