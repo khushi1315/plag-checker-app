@@ -6,7 +6,7 @@ import { jsPDF } from 'jspdf';
 import { Routes, Route, NavLink, useNavigate } from "react-router-dom";
 
 import { motion } from 'framer-motion';
-import { FaFilePdf, FaFileAlt} from 'react-icons/fa';
+import { FaFilePdf, FaFileAlt } from 'react-icons/fa';
 import Landing from './components/Landing';
 import * as pdfjsLib from 'pdfjs-dist/legacy/build/pdf';
 
@@ -23,7 +23,15 @@ function App() {
   const [pdfName, setPdfName] = useState('');
   const [scrollProgress, setScrollProgress] = useState(0);
   const textAreaRef = useRef(null);
-  
+
+
+
+  const handleClear = () => {
+    setText('');
+    setResult(null);  // Clear the result display as well if you want
+  };
+
+
 
   // For drag & drop
   const fileInputRef = useRef(null);
@@ -95,7 +103,9 @@ function App() {
     if (!text.trim()) return;
     setLoading(true);
     try {
-      const res = await axios.post('https://plag-checker-app.onrender.com/api/check', { text });
+      // const res = await axios.post('https://plag-checker-app.onrender.com/api/check', { text });
+      const res = await axios.post('http://localhost:5000/api/check', { text });
+
       setResult(res.data);
     } catch (err) {
       alert("Something went wrong.");
@@ -127,7 +137,7 @@ function App() {
     doc.save('plagiarism-report.pdf');
   };
 
-  
+
 
   // Result badge color
   const getResultClass = (percentage) => {
@@ -140,7 +150,7 @@ function App() {
   const mainChecker = (
     <div className="checker-split-wrapper">
       <div className="checker-input-col">
-        <h2 className="checker-title"><FaFileAlt style={{marginRight:8}}/>Plagiarism Checker</h2>
+        <h2 className="checker-title"><FaFileAlt style={{ marginRight: 8 }} />Plagiarism Checker</h2>
         <div className="drop-upload-wrapper">
           <label
             className={`drop-upload-btn${dragActive ? " drag-active" : ""}`}
@@ -191,6 +201,16 @@ function App() {
         >
           {loading ? "Checking..." : <>Check with AI <span role="img" aria-label="search">🔍</span></>}
         </motion.button>
+        <motion.button
+          whileHover={{ scale: 1.04, boxShadow: "0 4px 24px #4f8cff44" }}
+          whileTap={{ scale: 0.98 }}
+          className="check-btn"
+          onClick={handleClear}
+          disabled={loading}
+          style={{ marginLeft: '10px' }}
+        >
+          Clear
+        </motion.button>
       </div>
       <div className="checker-result-col">
         {result ? (
@@ -216,40 +236,40 @@ function App() {
           </motion.div>
         ) : (
           <div className="result-placeholder">
-            <span role="img" aria-label="search" style={{fontSize: '2em'}}>🔍</span>
+            <span role="img" aria-label="search" style={{ fontSize: '2em' }}>🔍</span>
             <div>Results will appear here after you check plagiarism.</div>
           </div>
         )}
         <div className="ai-emoji-block">
-  {result && (
-    <img
-      src={
-        result.percentage < 10
-          ? process.env.PUBLIC_URL + "/Happy.png"
-          : result.percentage < 50
-          ? process.env.PUBLIC_URL + "/Neutral.png"
-          : process.env.PUBLIC_URL + "/Sad.png"
-      }
-      alt={
-        result.percentage < 10
-          ? "Happy AI Emoji"
-          : result.percentage < 50
-          ? "Neutral AI Emoji"
-          : "Sad AI Emoji"
-      }
-      className="ai-emoji-img"
-    />
-  )}
-  {result && (
-    <div className="ai-emoji-caption">
-      {result.percentage < 10
-        ? "Great job! Your work is original 🎉"
-        : result.percentage < 50
-        ? "Not bad! Try to improve originality 😊"
-        : "Oops! High plagiarism detected 😢"}
-    </div>
-  )}
-</div>
+          {result && (
+            <img
+              src={
+                result.percentage < 10
+                  ? process.env.PUBLIC_URL + "/Happy.png"
+                  : result.percentage < 50
+                    ? process.env.PUBLIC_URL + "/Neutral.png"
+                    : process.env.PUBLIC_URL + "/Sad.png"
+              }
+              alt={
+                result.percentage < 10
+                  ? "Happy AI Emoji"
+                  : result.percentage < 50
+                    ? "Neutral AI Emoji"
+                    : "Sad AI Emoji"
+              }
+              className="ai-emoji-img"
+            />
+          )}
+          {result && (
+            <div className="ai-emoji-caption">
+              {result.percentage < 10
+                ? "Great job! Your work is original 🎉"
+                : result.percentage < 50
+                  ? "Not bad! Try to improve originality 😊"
+                  : "Oops! High plagiarism detected 😢"}
+            </div>
+          )}
+        </div>
         <footer className="footer-warning">
           <span role="img" aria-label="warning">🚨</span>
           This tool is for educational use only. Please cite your sources to avoid plagiarism.
@@ -257,7 +277,7 @@ function App() {
           <span role="img" aria-label="lock">🔐</span> Built with ❤️ by Khushi | AI-powered ✨
         </footer>
       </div>
-      
+
 
     </div>
   );
@@ -281,14 +301,14 @@ function App() {
           </NavLink>
         </li>
         <NavLink to="/about" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
-  About
-</NavLink>
+          About
+        </NavLink>
 
       </ul>
     </nav>
   );
 
- 
+
   function About() {
     return (
       <div className="about-page">
@@ -302,16 +322,16 @@ function App() {
       </div>
     );
   }
-  
-  
-  
+
+
+
 
   return (
     <>
       <Navbar />
-      
+
       <Routes>
-          <Route path="/" element={<Landing />} />
+        <Route path="/" element={<Landing />} />
         <Route path="/check" element={mainChecker} />
         <Route path="/about" element={<About />} />
       </Routes>
